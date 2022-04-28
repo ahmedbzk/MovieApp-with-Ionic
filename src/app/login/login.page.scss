@@ -1,0 +1,54 @@
+#container {
+  background-color: black;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 47%;
+  height: 60%;
+  bottom: 10%;
+  transform: translateY(-50%);
+  border-radius: 10%; 
+  
+  margin: 4%; 
+  margin-left: 8%; 
+  margin-right: 8%;
+}
+
+
+#input{
+    margin-top: 4%;
+    margin-left: 15%;
+    background-color: white; 
+    border-radius: 25px;
+    border: 1px solid grey;
+    width: 70%;
+    text-align: left; 
+    color: black;
+  }
+  #button{
+    
+    height: 39px;
+  
+    background-color: rgb(73, 152, 255); 
+    border-radius: 25px;
+    border: 1px solid grey;
+    width: 70%;
+    text-align: center; 
+    color: black;
+    font-size: 15px;
+    border: 2px solid white;
+    
+  }
+  #buttona{
+    font-size: 15px;
+    
+    height: 39px;
+    margin-top: 15px;
+    background-color: orange; 
+    border-radius: 25px;
+    border: 1px solid grey;
+    width: 40%;
+    text-align: center; 
+    color:black;
+  }

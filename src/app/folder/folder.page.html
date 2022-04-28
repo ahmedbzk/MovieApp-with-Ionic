@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="light" style="height: 100%; border-bottom-left-radius: 45px; border-bottom-right-radius: 45px; text-align: center;">
+    
+    <h1><strong>THE MOVİE APP</strong></h1>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="medium">
+  <br>
+  <ion-label style="font-size: 150%; margin-left: 5%; color: black;"><strong>MOVİES OF 2022</strong><ion-icon name="chevron-down-circle" style="font-size: 100%; margin-left: 3%;"></ion-icon></ion-label>
+
+
+  <br>
+  <br>
+
+  <ion-slides pager="true">
+    <ion-slide side="end" [routerLink]="['/detay/',eniyifilm.id]" routerLinkActive="router-link-active"  *ngFor="let eniyifilm of eniyifilmler" style="background-color: rgb(255, 255, 255);border-top: 5px solid black; border-bottom: 5px solid black; ">
+      <img  src="https://image.tmdb.org/t/p/w500/{{eniyifilm.backdrop_path}}">
+      <div style=" position: absolute;  margin-right: 60%; margin-top: 20%;"><b>{{eniyifilm.title}}</b></div>
+      <div style="padding:1px; display: block; position: absolute;  margin-right: 60%; margin-top: 40%; font-size: 12px;">{{eniyifilm.overview.slice(0,50)}}...</div>
+    </ion-slide>
+  </ion-slides>
+   
+
+  <br>
+
+
+  <ion-searchbar placeholder="Aradığınız Film?" color="light" style="margin-top: 10px;" [(ngModel)]="kelime" (ngModelChange)="bul()"></ion-searchbar>
+
+  <ion-list >
+    <ion-item *ngFor="let film of filmler"  [routerLink]="['/detay',film.id]" routerLinkActive="router-link-active" >
+      <ion-button  color="light">
+        <ion-badge color="danger" >{{film.original_title}}</ion-badge>
+        <ion-label style="margin-left: 20px;"><strong>Popularity: <u><i>{{film.popularity}}</i></u></strong></ion-label>
+      </ion-button>
+    </ion-item>
+  </ion-list >
+
+  <br>
+  
+  <ion-label style="font-size: 150%; margin-left: 5%; color: black;"><strong>BEST MOVİES</strong><ion-icon name="chevron-down-circle" style="font-size: 100%; margin-left: 3%;"></ion-icon></ion-label>
+  
+  
+
+  <ion-row (ngModelChange)="yinele()" *ngFor="let yine of yineleme_iki" style="background-color: rgb(124, 118, 118); border: 2px solid; padding: 3px; border-radius: 10px; margin-top: 5px; margin: 3%;">
+    <ion-col [routerLink]="['/detay/',yine.id]" routerLinkActive="router-link-active" >
+      <img style="height: 250px; width: 250px;" src="https://image.tmdb.org/t/p/w500/{{yine.poster_path}}" >
+    </ion-col> 
+    <ion-col>
+      <ion-card-title color="light">{{yine.title}}</ion-card-title>
+      <ion-card-content style="margin-top: 8px; padding: 0%;">
+        {{yine.overview.slice(0,100)+"..."}}
+      </ion-card-content>
+    </ion-col>
+  </ion-row>
+
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light" style="height: 55px; color: red;">
+    <ion-row >
+      <ion-col style="border-right: 2px solid black;">
+        <ion-icon name="home" id="icon"></ion-icon>
+      </ion-col>
+
+      <ion-col>
+        <a href="http://localhost:8100/watchlist"><ion-icon  name="heart" id="icon" ></ion-icon></a>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

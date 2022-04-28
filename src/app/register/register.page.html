@@ -1,0 +1,33 @@
+<div style="opacity: 0.9; width: 100%; height: 100%;  background-image: url('https://cdn.webtekno.com/media/cache/content_detail_v2/article/57859/filmler-hakkinda-11-gercek-1543138927.jpg');">
+
+  <div id="container"  >
+  
+  
+
+  <img style="height: 20%; margin-top: 20%; " src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tmdb.new.logo.svg/1200px-Tmdb.new.logo.svg.png">
+<br>
+  <ion-grid >
+    <ion-row>
+      <ion-col >
+        <ion-input id="input" placeholder="   Adınız"  [(ngModel)]="adi"></ion-input>
+        <ion-input id="input" placeholder="   Soyadınız" [(ngModel)]="soyadi"></ion-input>
+        <ion-input type="email" id="input" placeholder="   E-mail" [(ngModel)]="email"></ion-input>
+        <ion-input type="password" id="input" placeholder="   Şifre" [(ngModel)]="password"></ion-input>
+<br>
+        <button [disabled]="!adi || !soyadi || !email || !password" id="button" (click)="onLogin(adi,soyadi,email,password)"><strong>Kayıt ol</strong></button><br>
+        <button id="buttona" [routerLink]="['/login']" routerLinkActive="router-link-active" >Giriş Yap </button>
+
+<br>
+<br>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+    
+</div>   
+</div>
+  
+  
+
+
