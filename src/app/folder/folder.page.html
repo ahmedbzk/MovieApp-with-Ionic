@@ -28,7 +28,7 @@
   <ion-searchbar placeholder="Aradığınız Film?" color="light" style="margin-top: 10px;" [(ngModel)]="kelime" (ngModelChange)="bul()"></ion-searchbar>
 
   <ion-list >
-    <ion-item *ngFor="let film of filmler"  [routerLink]="['/detay',film.id]" routerLinkActive="router-link-active" >
+    <ion-item *ngFor="let film of filmler"  [routerLink]="['/detail',film.id]" routerLinkActive="router-link-active" >
       <ion-button  color="light">
         <ion-badge color="danger" >{{film.original_title}}</ion-badge>
         <ion-label style="margin-left: 20px;"><strong>Popularity: <u><i>{{film.popularity}}</i></u></strong></ion-label>
@@ -66,7 +66,7 @@
       </ion-col>
 
       <ion-col>
-        <a href="http://localhost:8100/watchlist"><ion-icon  name="heart" id="icon" ></ion-icon></a>
+        <a href="/watchlist"><ion-icon  name="heart" id="icon" ></ion-icon></a>
       </ion-col>
     </ion-row>
   </ion-toolbar>
