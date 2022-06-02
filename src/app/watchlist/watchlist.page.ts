@@ -61,10 +61,8 @@ export class WatchlistPage implements OnInit {
       }});
 
     this.uyari('Filminiz silindi.','danger');
-  
-    setTimeout(() => {
-      window.location.assign("http://localhost:8100/watchlist");
-    }, 2); 
+    window.location.reload();
+
   }
 
 
